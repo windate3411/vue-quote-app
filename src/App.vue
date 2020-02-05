@@ -42,7 +42,11 @@ export default {
   },
 
   data: () => ({
-    quotes: ['This is A quote', 'This is Another quote'],
+    quotes: ["The greatest glory in living lies not in never falling, but in rising every time we fall.",
+      "The way to get started is to quit talking and begin doing.",
+      "If life were predictable it would cease to be life, and be without flavor.",
+      "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success.",
+      "The beautiful thing about learning is that no one can take it away from you."],
     maxQuotes: 10,
     snackbar: false,
     text: ''
