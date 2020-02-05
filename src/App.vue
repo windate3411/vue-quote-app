@@ -1,6 +1,8 @@
 <template>
   <v-app>
     <v-content>
+      <!-- add header -->
+      <Header></Header>
       <!-- add a progress bar -->
       <v-progress-linear :value="progress"></v-progress-linear>
       <!-- snackbar for message shown -->
@@ -28,12 +30,13 @@
 <script>
 import Quote from './components/Quote.vue';
 import NewQuote from './components/NewQuote.vue';
+import Header from './components/Header.vue';
 
 export default {
   name: 'App',
 
   components: {
-    Quote, NewQuote
+    Quote, NewQuote, Header
   },
 
   data: () => ({
