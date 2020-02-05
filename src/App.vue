@@ -1,6 +1,10 @@
 <template>
   <v-app>
     <v-content>
+      <v-snackbar v-model="snackbar" top timeout="3000">
+        {{ text }}
+        <v-btn color="pink" text @click="snackbar = false">Close</v-btn>
+      </v-snackbar>
       <v-container>
         <NewQuote @addQuote="updateQuotes" />
         <v-divider></v-divider>
@@ -28,11 +32,14 @@ export default {
 
   data: () => ({
     quotes: ['This is A quote', 'This is Another quote'],
-    maxQuotes: 10
+    maxQuotes: 10,
+    snackbar: false,
+    text: 'You have added a new quote',
   }),
   methods: {
     updateQuotes(quote) {
       this.quotes.push(quote)
+      this.snackbar = true
     }
   },
 };
