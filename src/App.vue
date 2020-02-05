@@ -4,7 +4,9 @@
       <!-- add header -->
       <Header></Header>
       <!-- add a progress bar -->
-      <v-progress-linear :value="progress" color="red"></v-progress-linear>
+      <v-progress-linear :value="progress" color="red" height="25">
+        <strong>{{quotes.length}}/{{maxQuotes}}</strong>
+      </v-progress-linear>
       <!-- snackbar for message shown -->
       <v-snackbar v-model="snackbar" top timeout="3000">
         {{ text }}
