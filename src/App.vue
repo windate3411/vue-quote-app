@@ -2,7 +2,7 @@
   <v-app>
     <v-content>
       <v-container>
-        <NewQuote />
+        <NewQuote @addQuote="updateQuotes" />
         <v-row>
           <Quote v-for="(item,index) in quotes" :key="index">
             <p class="quote">{{item}}</p>
@@ -28,5 +28,10 @@ export default {
     quotes: ['This is A quote', 'This is Another quote'],
     maxQuotes: 10
   }),
+  methods: {
+    updateQuotes(quote) {
+      this.quotes.push(quote)
+    }
+  },
 };
 </script>
