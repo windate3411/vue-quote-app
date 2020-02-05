@@ -4,7 +4,7 @@
       <!-- add header -->
       <Header></Header>
       <!-- add a progress bar -->
-      <v-progress-linear :value="progress"></v-progress-linear>
+      <v-progress-linear :value="progress" color="red"></v-progress-linear>
       <!-- snackbar for message shown -->
       <v-snackbar v-model="snackbar" top timeout="3000">
         {{ text }}
@@ -43,18 +43,29 @@ export default {
     quotes: ['This is A quote', 'This is Another quote'],
     maxQuotes: 10,
     snackbar: false,
-    text: 'You have added a new quote',
-    progress: '0'
+    text: ''
   }),
+  computed: {
+    progress() {
+      return (this.quotes.length * 10).toString()
+    }
+  },
   methods: {
     updateQuotes(quote) {
-      this.quotes.push(quote)
       this.snackbar = true
-      this.progress = parseInt(this.progress) + 10
+      // check if user reach 10 quotes
+      if (this.quotes.length === this.maxQuotes) {
+        this.text = 'You can\'t have any more quotes'
+      } else {
+        this.quotes.push(quote)
+        this.text = 'You have added a new quote'
+        this.progress = parseInt(this.progress) + 10
+      }
     },
     deleteQuote(index) {
       this.quotes.splice(index, 1)
-      this.progress -= 10
+      this.text = 'You have deleted a quote'
+      this.progress = parseInt(this.progress) - 10
     }
   },
 };

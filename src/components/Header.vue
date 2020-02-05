@@ -3,7 +3,7 @@
     <v-app-bar>
       <v-app-bar-icon></v-app-bar-icon>
       <v-toolbar-title class="text-uppercase grey--text">
-        <span class="font-weight-light">Amazing quotes</span>
+        <span class="font-weight-bold">Amazing quotes</span>
       </v-toolbar-title>
     </v-app-bar>
   </nav>

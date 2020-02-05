@@ -1,8 +1,8 @@
 <template>
   <v-row>
     <v-col cols="12" sm="8" offset-sm="2" md="6" offset-md="3">
-      <v-form class="text-center">
-        <v-textarea label="Quote" hint="Enter your quote" v-model="quote"></v-textarea>
+      <v-form class="text-center" ref="form">
+        <v-textarea label="Quote" hint="Enter your quote" v-model="quote" :rules="quoteRules"></v-textarea>
         <v-btn small @click.prevent="creatNew">
           <v-icon left>mdi-plus</v-icon>
           <span>Add quote</span>
@@ -17,13 +17,18 @@
 export default {
   data() {
     return {
-      quote: ''
+      quote: '',
+      quoteRules: [
+        v => !!v || 'Quote is required',
+        v => (v && v.length >= 10) || 'Quote must be greater than 10 characters',
+      ],
     }
   },
   methods: {
     creatNew() {
       this.$emit('addQuote', this.quote)
       this.quote = ''
+      this.$refs.form.resetValidation()
     }
   },
 }
