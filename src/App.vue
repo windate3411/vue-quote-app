@@ -3,11 +3,13 @@
     <v-content>
       <v-container>
         <NewQuote @addQuote="updateQuotes" />
+        <v-divider></v-divider>
         <v-row>
           <Quote v-for="(item,index) in quotes" :key="index">
             <p class="quote">{{item}}</p>
           </Quote>
         </v-row>
+        <v-divider></v-divider>
       </v-container>
     </v-content>
   </v-app>
