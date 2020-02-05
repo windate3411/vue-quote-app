@@ -14,9 +14,11 @@ You can simply add the quote you like in the textarea and delete on click.
 
 ## Project preview
 
+![image](https://github.com/windate3411/vue-quote-app/blob/master/demo.PNG)
+
 ## Project Demo
 
-Try [this link](https://quirky-neumann-a76206.netlify.com/) for a live demo.
+Try [this link](https://lucid-liskov-224744.netlify.com/) for a live demo.
 
 ## Project setup
 ```
